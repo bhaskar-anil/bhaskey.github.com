@@ -12,12 +12,10 @@ tagline: a computer science blog
 	<li><a href="https://www.hackerearth.com/@anilbhaskar.cse">Hackerearth</a></li>
 </ul> 
 
-### Categories
 
-<ul class="posts">
-  {% for category in site.categories %}
-    <li><span>{{ category.title }}</span> &raquo; <a href="{{ BASE_PATH }}{{ category.url }}">{{ category.title }}</a></li>
-  {% endfor %}
+<ul class="tag_box inline">
+  {% assign categories_list = site.categories %}
+  {% include JB/categories_list %}
 </ul>
 
 ### Posts
