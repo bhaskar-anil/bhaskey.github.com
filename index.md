@@ -12,6 +12,7 @@ tagline: a computer science blog
 	<li><a href="https://www.hackerearth.com/@anilbhaskar.cse">Hackerearth</a></li>
 </ul> 
 
+### Categories
 
 <ul class="tag_box inline">
   {% assign categories_list = site.categories %}
