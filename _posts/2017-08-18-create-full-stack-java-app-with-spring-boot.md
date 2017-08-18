@@ -13,7 +13,7 @@ Spring Boot is just an another library to consume. It makes easier to setup, con
 
 You may use your IDE to create new project or just use [Spring Initilizer](http://start.spring.io/) for creating the archetype of the project. And add dependecies (I have added Web, Thymleaf and H2 that would be enough to start off.)
 
-![Spring Initilizer]({{ site.baseurl }}/images/si.png "Spring Initilizer")
+![Spring Initilizer]({{ site.baseurl }}/images/si.PNG "Spring Initilizer")
 
 This will download you a zip file of the project archetype which you can simply `import as a Maven Project` in your IDE.
 
