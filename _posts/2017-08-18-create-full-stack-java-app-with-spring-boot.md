@@ -6,48 +6,43 @@ tags : [java, spring-boot, java-full-stack, design-question]
 ---
 {% include JB/setup %}
 
+## What is Spring Boot
+Spring Boot is just an another library to consume. It makes easier to setup, configure, build and ship to developers. Since Spring Framework has become a de-facto framework for all Java Technology projects, Spring Boot has made it lot easier to start off with a project.
 
-## Problem Statement
+### Creating a Spring Boot Project
 
-### Find occurance of a number in a given array of integers/character?
+You may use your IDE to create new project or just use [Spring Initilizer](http://start.spring.io/) for creating the archetype of the project. And add dependecies (I have added Web, Thymleaf and H2 that would be enough to start off.)
 
-Similar problem statement in Hackerearth can be found here
-https://www.hackerearth.com/practice/data-structures/arrays/1-d/practice-problems/algorithm/memorise-me/
+![Spring Initilizer]({{ site.baseurl }}/images/si.png "Spring Initilizer")
 
-#### Input
-An array of numbers/characters, a number/character to find occurance for.
+This will download you a zip file of the project archetype which you can simply `import as a Maven Project` in your IDE.
 
-#### Output
-Occurance of the number/character.
+You can run the application by `run as Spring Boot App`, and It will run the application on your `localhost:8080`. You can change the port by adding `server.port=xxxx` in `application.properties` if port 8080 is already in use.
 
-## Solution
+### Adding views
+#### Add `index.html` under `src/resources/templates`.
+```html
+<!DOCTYPE html>
+<html>
+<head>
+<title>Ordinary Title</title>
+</head>
+<body>
+<h3>Hey this is your view.</h3>
+</body>
+</html>
+```
+Add controller with `RequestMapping` to the view. eg. Add TestController.java with following content.
 
-### Solution
-
- - Create a HashMap<Integer, Integer>
- - `put()` the numbers/characters as key
- - Keep track of occurance as values
- - `get()` occurance for a number/character
- 
-#### Time Complexity O(n)
-
- - Create a HashMap<Integer, Integer>
- - `put()` the numbers/characters as key - `O(n)`
- - Keep track of occurance as values
- - `get()` occurance for a number/character - `O(1)`
- 
-#### Code
-
-    public static int countOccu(int[] array, int a){
-				
-        HashMap<Integer, Integer> occ = new HashMap<Integer, Integer>();
-		
-        for(int ar : array){
-            if(occ.containsKey(ar)){
-                occ.put(ar, (occ.get(ar)+1));
-            }else{
-                occ.put(ar, 1);
-            }
-		}		
-		return (occ.containsKey(a)) ? occ.get(a) : 0;
+```java
+@Controller
+public class TestController {
+	
+	@GetMapping("/myurl")
+	public String myurl() {
+		return "index";
 	}
+}
+```
+
+Now go to the newly created url to see your view. `localhost:8080/myurl`.
